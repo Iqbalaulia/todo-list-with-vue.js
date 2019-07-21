@@ -27,12 +27,21 @@
       }
     },
     methods: {
+
+      // Delete on API
+
       deleteTodo(id) {
-        this.todos = this.todos.filter(todo => todo.id !== id);
+        axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        .then(res =>  this.todos = this.todos.filter(todo => todo.id !== id))
+        .catch(err => console.log(err));
+
+       
       },
+
+      // Insert on API
+
       addTodo(newTodo){
         const { title, complated} = newTodo;
-
         axios.post('https://jsonplaceholder.typicode.com/todos',{
           title,
           complated
@@ -43,6 +52,8 @@
       
       }
     },
+
+    // Get API
 
     created(){
       axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
