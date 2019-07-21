@@ -42,7 +42,7 @@
       deleteTodo(id) {
         this.todos = this.todos.filter(todo => todo.id !== id);
       },
-      AddTodo(newTodo){
+      addTodo(newTodo){
         this.todos = [
           ...this.todos, newTodo
         ];
