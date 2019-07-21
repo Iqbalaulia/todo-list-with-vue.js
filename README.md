@@ -5,6 +5,13 @@
 npm install
 ```
 
+### Dont forget to setup
+```
+npm install uuid
+```
+npm install axios
+<!-- As Root -->
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
